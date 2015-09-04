@@ -2,6 +2,101 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/Navbar/
+
+.navbar-header button{
+	font-family: 'Pacifico', cursive;
+	font-size: 35px;
+	font-weight: lighter;
+	height: 50px;
+	border-style: outset;
+	background-color: LightBlue;
+}
+
+ul.dropdown-menu li{
+	color: LightBlue;
+	text-decoration: none;
+	background-color: grey;
+}
+ 
+.dropdown-menu>li>a:hover{
+	color: lightblue;
+	background-color: grey;
+	
+}
+
+.navbar-nav{
+	display: inline-block;
+	float: right;
+	padding: 0.5em 1em;
+}
+
+.navbar{
+	background-color: grey;
+	height: 75px;
+	width: 100%;
+	
+}
+
+.navbar ul li a{
+	color: white;
+	font-family: 'Pacifico', cursive;
+	letter-spacing: 0.10em;
+	padding: 20px 10px 20px;
+	-webkit-transition: color 600ms;
+	transition: color 600ms;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.project-name a{
+	float:left;
+	color: LightBlue;
+	font-family: 'Pacifico', cursive;
+	letter-spacing: 0.10em;
+	padding: 20px 20px 20px;
+	-webkit-transition: color 600ms;
+	transition: color 600ms;
+	font-size: 20px;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+	color: LightBlue;
+	text-decoration: none;
+	background-color: #073E63 <!--Dark Blue-->
+}
+
+.container-fluid {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.container-fluid h1 {
+	padding-left: 15px;
+}	
+
+.container-fluid p {
+	padding-left: 15px;
+}
+
+.dropdown-menu {
+	color: LightBlue;
+	text-decoration: none;
+	background-color: #073E63
+}
+
+
+.anchor{
+	padding-top: 50px;
+	min-height: 625px;
+	page-break-before: always;
+	page-break-after: always;
+}
+
+/Home Page/
+
 h1 {
 	color: blue;
 	font-family: cursive;
