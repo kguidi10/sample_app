@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/Navbar/
+
 
 .navbar-header button{
 	font-family: 'Pacifico', cursive;
@@ -65,7 +65,7 @@ ul.dropdown-menu li{
 .navbar-inverse .navbar-nav>li>a:hover{
 	color: LightBlue;
 	text-decoration: none;
-	background-color: #073E63 <!--Dark Blue-->
+	background-color: #073E63; 
 }
 
 .container-fluid {
@@ -84,7 +84,7 @@ ul.dropdown-menu li{
 .dropdown-menu {
 	color: LightBlue;
 	text-decoration: none;
-	background-color: #073E63
+	background-color: #073E63;
 }
 
 
@@ -94,8 +94,6 @@ ul.dropdown-menu li{
 	page-break-before: always;
 	page-break-after: always;
 }
-
-/Home Page/
 
 h1 {
 	color: blue;
