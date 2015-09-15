@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  resources :products
-  resources :products
-  resources :products
-  resources :products
-  resources :products
+    resources :products
   get 'static_pages/contact'
 
   get 'static_pages/about'
