@@ -32,7 +32,7 @@ ul.dropdown-menu li{
 }
 
 .navbar{
-	background-color: grey;
+	background-color: purple;
 	height: 75px;
 	width: 100%;
 	
@@ -68,6 +68,7 @@ ul.dropdown-menu li{
 	background-color: #073E63; 
 }
 
+
 .container-fluid {
 	padding-right: 0px;
 	padding-left: 0px;
@@ -95,8 +96,8 @@ ul.dropdown-menu li{
 	page-break-after: always;
 }
 
-h1 {
-	color: blue;
+.jumbotron h1 {
+	padding: 15px;
 	font-family: cursive;
 	text-align: center;
 }
