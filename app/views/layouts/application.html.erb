@@ -16,55 +16,35 @@
 	</head>
 <body data-spy="scroll" data-target=".subnav" data-offset="100">
 <!--navbar starts here-->
-  <nav>
-    <div class="navbar navbar-inverse navbar-fixed-top" role "Navigation" id="navbar">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        <div class="projectName">
-            <a href="#">Family Time</a>
-        </div>
-      </div>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role "Navigation" id="navbar">
+
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <div class="projectName">
+      <a href="/">Family Time</a>
+    </div>
+    </div>
         <!--end navbar-header-->
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li>
-              <a href="/products#Products">Products</a>
-            </li>
-            <li>
-              <a href="#Features">Features</a>
-            </li>
-            <li>
-              <a href="#About">About</a>
-            </li>
-            <li>
-              <a href="#Contact">Contact</a>
-            </li>
-
-            <!-- add login and logout button for user-->
-                <!--li>
-                  <a href="#Login">Login</a>
-                </li-->
-      <!--div class="search" id="Search">
-            <form accept-charset="UTF-8" action="/products" method="get"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-        <label for="q">Search for:</label>
-          <input id="q" name="q" type="text" />
-            <input name="commit" type="submit" value="Search" />
-</form>        </div-->
-
-            </ul>
-          </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="<%= "active" if params[:controller] == "products" %>"><%= link_to "Products", products_path %></li>
+          <li><a href="#Features">Features</a></li>
+          <li><a href="#About">About</a>
+          </li>
+          <li><a href="#Contact">Contact</a></li>
+        </ul>
                 <!--end navbar-collapse-->
-        </div>
+      </div>
             <!--end container fluid-->
 
-      </div>
-    </nav>
+    </div>
+  </nav>
      
 
   <div class="container anchor" id="Products">
