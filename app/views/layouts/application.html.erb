@@ -30,21 +30,38 @@
       <a href="/">Family Time</a>
     </div>
     </div>
+
+  <div class="navbar-collapse collapse">
+  
+       <div class="navbar-form navbar-right">
+          <% if user_signed_in? %>
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete, class:"btn btn-default" ) %>
+            <%= link_to('Edit User', edit_user_registration_path, :method => :get, class:"btn btn-default" ) %> 
+          <% else %>
+            <%= link_to('Login', new_user_session_path, :method => :get, class:"btn btn-default" ) %>
+            <%= link_to('Register', new_user_registration_path, :method => :get, class:"btn btn-default" ) %>  
+          <% end %>
+        </div>
+       
+    <!--search box -->
+
+      <%= form_tag("/products", method: "get", class:"navbar-form navbar-right") do %> 
+          <div class="form-group">
+            <%= label_tag(:q, "Search for:", class:"hidden") %>
+            <%= text_field_tag(:q, "", type:"text", class:"form-control", placeholder:"Search") %>
+          </div>
+        <%= submit_tag("Search", class:"btn btn-default") %>
+        <% end %>
+
         <!--end navbar-header-->
-      <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="<%= "active" if params[:controller] == "products" %>"><%= link_to "Products", products_path %></li>
+          <li class="active"><%= link_to "Products", products_path %></li>
           <li><a href="#Features">Features</a></li>
           <li><a href="#About">About</a></li>
           <li><a href="#Contact">Contact</a></li>
         </ul>
                 <!--end navbar-collapse-->
-      </div>
-      <%= form_tag("/products", method: "get") do %>
-        <%= label_tag(:q, "Search for:") %>
-        <%= text_field_tag(:q) %>
-        <%= submit_tag("Search") %>
-      <% end %>
+     
             <!--end container fluid-->
 
     </div>
@@ -69,5 +86,5 @@
     <h1> Contact </h1>
   </div>
 
-</body>
+  </body>
 </html>
