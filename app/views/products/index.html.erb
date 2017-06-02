@@ -1,23 +1,12 @@
 <h1>Check Out Family Time</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>Color</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<section class="container-fluid">
+  <% @products.each do |product| %>
+    <%= render partial: "product", locals:{ product:product} %>
 
-  <tbody>
-    <%= render @products %>
-  </tbody>
-</table>
+  <% end %>
+</section>
 
-<br>
-
-
-<%= link_to 'New Product', new_product_path %>
-
+ <section id="new_product_link">
+  <%= link_to 'New Product', new_product_path %>
+</section>

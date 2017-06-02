@@ -1,25 +1,33 @@
 Rails.application.routes.draw do
-    resources :products
-  get 'static_pages/contact'
-
+  resources :products
+  resources :orders, only: [:index, :show, :create, :destroy]
   get 'static_pages/about'
 
   get 'static_pages/contact'
 
   get 'static_pages/index'
+  root 'static_pages#landing_page'
+  
+  post 'static_pages/thank_you'
+
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+end
+
+  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'static_pages#landing_page'
+ 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-  resources :orders, only: [:index, :show, :create, :destroy]
+ 
   
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
@@ -64,5 +72,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
  
