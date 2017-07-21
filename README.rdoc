@@ -1,7 +1,7 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README is about Familytime.  It is currently running Ruby v 2.4.0
+Rails v 5.1.2
 
 Things you may want to cover:
 
