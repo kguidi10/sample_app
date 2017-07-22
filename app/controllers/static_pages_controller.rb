@@ -16,4 +16,6 @@ class StaticPagesController < ApplicationController
       	body: @message).deliver_now
   	end
 
+    to
+
 end
