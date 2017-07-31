@@ -16,8 +16,10 @@
 	</head>
 <body data-spy="scroll" data-target=".subnav" data-offset="100">
 <!--navbar starts here-->
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+ <div class="flash-notices">
+    <p class="notice text-info"><%= notice %></p>
+    <p class="alert text-danger"><%= alert %></p>
+  </div>
   <nav class="navbar navbar-inverse navbar-fixed-top" role "Navigation" id="navbar">
 
     <div class="container-fluid">
