@@ -26,7 +26,7 @@ gem 'devise'
 
 gem 'cancancan', '~> 1.10'
 
-gem ruby '2.2.4'
+ruby '2.2.4'
 
 
 # Use ActiveModel has_secure_password
