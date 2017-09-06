@@ -1,6 +1,10 @@
 class Product < ActiveRecord::Base
   has_many :orders
-end
+  has_many :comments
+
+	def highest_rating_comment
+  		comments.rating_desc.first
+	end
 
 def self.search(search_term)
 	if Rails.env.development?
