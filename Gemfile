@@ -28,6 +28,8 @@ gem 'cancancan', '~> 1.10'
 
 gem 'execjs'
 
+gem 'puma'
+
 
 
 # Use ActiveModel has_secure_password
