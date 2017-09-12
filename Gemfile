@@ -30,6 +30,8 @@ gem 'execjs'
 
 gem 'puma'
 
+gem 'will_paginate'
+
 
 
 # Use ActiveModel has_secure_password
