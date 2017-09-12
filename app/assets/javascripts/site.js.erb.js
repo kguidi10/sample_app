@@ -1,5 +1,3 @@
-site.js.erb
-
 $(document).on('turbolinks:load', function(){
   $('.rating').raty({
     starHalf: '<%= asset_path 'star-half.png' %>',
