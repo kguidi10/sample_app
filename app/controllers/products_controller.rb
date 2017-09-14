@@ -6,15 +6,11 @@ class ProductsController < ApplicationController
   def index
     if params[:q]
        search_term = params[:q]
-       if Rails.env.production?
-         @products = Product.where("name ilike ?", "%#{search_term}%")
-       else
-         @products = Product.where("name LIKE ?", "%#{search_term}%")
-       end
+       @products = Product.search(search_term)
     else
        @products = Product.all
     end
-    
+  
   end
 
   # GET /products/1
@@ -36,17 +32,15 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.find(params[:product_id])
-    @comment = @product.comments.new(comment_params)
-    @comment.user = current_user
+    @product = Product.new(product_params)
 
     respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @product, notice: 'Review was created successfully.'  }
+      if @product.save
+        format.html { redirect_to @product, notice: 'Product was successfully created.'  }
         format.json { render :show, status: :created, location: @product }
       else
-        format.html { redirect_to @product, alert: 'Review was not saved successfully.' }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.html { render :new }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
   end
