@@ -34,6 +34,8 @@ gem 'will_paginate'
 
 gem 'web-console', '>=3.3.0', group: :development
 
+gem 'rails-controller-testing'
+
 
 
 
