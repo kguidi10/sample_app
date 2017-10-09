@@ -36,6 +36,8 @@ gem 'web-console', '>=3.3.0', group: :development
 
 gem 'rails-controller-testing'
 
+ruby '2.4.1'
+
 
 
 
@@ -59,6 +61,8 @@ group :development, :test do
   gem 'spring'
   # Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
+
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :production do

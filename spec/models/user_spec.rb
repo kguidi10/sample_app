@@ -2,11 +2,13 @@
 require 'rails_helper'
 
 describe User do 
-	context "testing validations" do
+	context "testing validations password not 6 digit min" do
+		it "will not validate" do
 
 
-		it 'requires email address' do 
-			expect(User.new(first_name: "Kristin", last_name: "Guidi", email: nil)).not_to be_valid
-		end
+describe User, type: :model do
+ 	it "should not validate users without an email address" do
+ 		@user = FactoryGirl.build(:user, email: "not_an_email")
+ 		expect(@user).to_not be_valid
 	end
 end
