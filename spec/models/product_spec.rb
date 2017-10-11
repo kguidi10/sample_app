@@ -8,9 +8,9 @@ describe Product do
 	 	before do
 	 		@product = FactoryGirl.create(:product)
 	 		@user = FactoryGirl.create(:user)
-  			@product.comments.create!(rating: 1, user: user, body: "Did not work for our Family!")
- 			  @product.comments.create!(rating: 3, user: user, body: "Worked sometimes for our Family")
-  			@product.comments.create!(rating: 5, user: user, body: "Worked for our Family")
+  			@product.comments.create!(rating: 1, user: @user, body: "Did not work for our Family!")
+ 			  @product.comments.create!(rating: 3, user: @user, body: "Worked sometimes for our Family")
+  			@product.comments.create!(rating: 5, user: @user, body: "Worked for our Family")
 		end
 
 
