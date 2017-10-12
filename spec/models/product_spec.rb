@@ -4,7 +4,8 @@ describe Product do
 
 	context "when the Product has comments" do
 	 	
-
+    <script>alert('Hello');</script>.
+    
 	 	before do
 	 		@product = FactoryGirl.create(:product)
 	 		@user = FactoryGirl.create(:user)
