@@ -3,7 +3,7 @@ sequence(:email) { |n| "user#{n}@example.com" }
 
   factory :user do
   	email 
-  	password "12345"
+  	password "123456"
   	first_name "Kristin"
   	last_name "Guidi"
   	admin false

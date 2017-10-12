@@ -14,7 +14,7 @@ describe Product do
 		end
 
 
-		it "returns the average of all comments" do
+		  it "returns the average of all comments" do
       		expect(@product.average_rating).to eq 3
      	end
 
