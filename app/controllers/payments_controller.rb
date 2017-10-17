@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-	before_action :authenticate_user!
+	
 
     def create
         @product = Product.find(params[:product_id])
@@ -7,9 +7,8 @@ class PaymentsController < ApplicationController
 		token = params[:stripeToken]
 
         begin
-            byebug
             charge = Stripe::Charge.create(
-                amount: (@product.price*499).to_i,
+                amount: ((@product.price).to_i)*100,
                 currency: "usd",
                 source: token,
                 description: params[:stripeEmail]
