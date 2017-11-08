@@ -27,3 +27,5 @@ module SampleApp
     config.assets.initialize_on_precompile = false
   end
 end
+
+config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
