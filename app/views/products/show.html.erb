@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-  <div class="row">
+  <div class="row" data-product-id ="<%= @product.id %>">
     <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
       <div class="thumbnail">
 
@@ -44,6 +44,7 @@
     <%= render partial: "shared/stripe_checkout_button" %>
   <% end %>
   <%= render 'new_comment' %>
+  <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
   <%= render 'comments' %>
 
         </div>
