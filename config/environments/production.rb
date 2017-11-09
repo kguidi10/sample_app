@@ -91,4 +91,7 @@ config.cache_store = :dalli_store,
    :down_retry_delay => 60
   }
 
+config.web_socket_server_url = "wss://familytime.herokuapp.com/cable"
+config.action_cable.allowed_request_origins = ['https://familytime.herokuapp.com', 'http://familytime.herokuapp.com']
+
 end
