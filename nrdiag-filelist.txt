@@ -1,0 +1,15 @@
+List of files in zipfileStored file name:newrelic.yml
+Original path:/Users/kristinguidi/desktop/familytime/config/newrelic.yml
+
+Stored file name:Gemfile
+Original path:/Users/kristinguidi/desktop/familytime/Gemfile
+
+Stored file name:Gemfile.lock
+Original path:/Users/kristinguidi/desktop/familytime/Gemfile.lock
+
+Stored file name:Gemfile(1)
+Original path:/Users/kristinguidi/desktop/familytime/rake-12.0.0/Gemfile
+
+Stored file name:nrdiag-filelist.txt
+Original path:./nrdiag-filelist.txt
+
