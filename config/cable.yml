@@ -7,3 +7,4 @@ test:
 production:
   adapter: postgresql
   url: postgres://jvxbohksxggwck:Mh3N8cmwm2AAuAdTy3bw8Sgerk@ec2-54-83-10-210.compute-1.amazonaws.com:5432/def5nf2q7e07gt
+ 
