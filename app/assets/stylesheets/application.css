@@ -17,11 +17,7 @@
 #Products.container.anchor p {
 	font-family: 'Indie Flower', cursive;
 	font-size: 20px;
-	position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+
 }
 #Products.container.anchor a{
 	font-family: 'Indie Flower', cursive;
