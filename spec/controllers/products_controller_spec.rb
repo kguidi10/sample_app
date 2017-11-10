@@ -1,8 +1,8 @@
-require 'rails-helper'
+require 'rails_helper'
 
 describe ProductsController, type: :controller do
 
-	befoer do
+	before do
 		@user = FactoryGirl.create(:user)
 		@admin = FactoryGirl.create(:admin)
 		@product1 = FactoryGirl.create(:product, name: "1 Week FREE", description: "One Week of Family Time", price: "0")

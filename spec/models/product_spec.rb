@@ -30,6 +30,8 @@ describe Product do
 
 
      context "when product has no name" do
+      end
+      
       before do
         @product = Product.create(:description => "This is a test")
       end

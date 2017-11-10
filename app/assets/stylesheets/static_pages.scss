@@ -50,8 +50,9 @@ ul.dropdown-menu li{
 	
 }
 
+// Logout button//
 .navbar ul li a{
-	color: white;
+	color: LightBlue;
 	font-family: 'Indie Flower', cursive;
 	letter-spacing: 0.10em;
 	padding: 20px 10px 20px;
@@ -60,18 +61,30 @@ ul.dropdown-menu li{
 	font-size: 20px;
 	font-weight: 500;
 }
+.navbar ul li a:hover {
+	color: LightBlue;
+	text-decoration: none;
+	background-color: #073E63; 
+	
+}
 
 .projectName a{
 	float:left;
 	color: LightBlue;
 	font-family: 'Indie Flower', cursive;
 	letter-spacing: 0.10em;
-	padding: 20px 20px 20px;
+	padding: 30px 20px 20px;
 	-webkit-transition: color 600ms;
 	transition: color 600ms;
 	font-size: 20px;
 	font-weight: 500;
 	text-decoration: none;
+}
+.projectName a:hover {
+	color: LightBlue;
+	text-decoration: none;
+	background-color: #073E63; 
+	
 }
 
 .navbar-inverse .navbar-nav>li>a:hover{
@@ -81,9 +94,31 @@ ul.dropdown-menu li{
 }
 
 
+form.navbar-form.navbar-right {
+	padding: 10px;
+
+	}
+ul.nav.pull-right li a {
+	padding: 25px;
+}
+.dropdown-menu {
+	color: LightBlue;
+	text-decoration: none;
+	background-color: #073E63;
+}
+#Products.container.anchor form input {
+	font-family: 'Indie Flower', cursive;
+	
+}
+input.btn.btn-default {
+	font-family: 'Indie Flower', cursive;
+	font-size: 17px;
+}
+
 .container-fluid {
 	padding-right: 0px;
 	padding-left: 0px;
+	display: center;
 }
 
 .container-fluid h1 {
@@ -94,15 +129,9 @@ ul.dropdown-menu li{
 	padding-left: 15px;
 }
 
-.dropdown-menu {
-	color: LightBlue;
-	text-decoration: none;
-	background-color: #073E63;
-}
-
-
 .anchor{
 	padding-top: 50px;
+	padding-bottom: 50px;
 	min-height: 625px;
 	page-break-before: always;
 	page-break-after: always;
