@@ -2,62 +2,97 @@ require 'rails_helper'
 
 describe ProductsController, type: :controller do
 
-  context 'GET #index' do
-    before do
-      get :index
+  before do 
+      @user = FactoryGirl.create(:user)
+    @admin = FactoryGirl.create(:admin)
+
+    ### GET index action
+  describe 'GET #index' do
+
+    context 'when a GET request matches a search_term' do
+      it 'displays the search request for a product' do
+        get :index, params: {q: 'Custom style'}
+        expect(assigns(:products)).to match_array([@product1])
+        expect(response).to render_template('index')
+      end
     end
 
-    it 'responds successfully with an HTTP 200 status code' do
-      expect(response).to be_success     
-      expect(response).to have_http_status(200)
-    end
-
-    it 'renders the index template' do
-      expect(response).to render_template('index')
+    context 'when a GET request matches no search_term' do
+      it 'displays all the products' do
+        get :index
+        expect(assigns(:products)).to.match_array([@product.all])
+      end
     end
   end
 
-  context 'POST #create' do
-    it 'is an invalid product' do
-    @product = FactoryGirl.build(:product, name: "")
-    expect(@product).not_to be_valid
+  ### GET show
+  describe 'GET #show' do
+    context 'when the GET show action is requested' do
+      it 'renders the show template' do
+        get :show, params: { id: @product1 }
+        expect(response.status).to eq 200
+        expect(response).to render_template('show')
+      end
     end
   end
 
-  context 'GET #show' do
-    it 'renders the show page' do
-      product = FactoryGirl.create(:product)
-      get :show, id: product.id
-      expect(response).to be_ok
-      expect(response).to render_template('show')
+  ### GET new
+  describe 'GET #new' do
+    context 'when the GET new is requested ' do
+      it 'renders the new product template' do
+        get :new
+        expect(response).to redirect_to('new')
+      end
     end
   end
 
-  context "DELETE #destroy" do
-    before do
-      @user = FactoryGirl.build(:admin)
-      sign_in @user
+  ### POST create
+  describe 'POST #create' do
+    context 'when a new product is created successfully' do
+      it 'save the product in the database' do
+        before = Product.all.length
+        post :create, params: { product: {name: "Test Bike", description: "just for testing", color: "green", price: "100"}}
+        after = Product.all.length
+        expect(response.status).to eq 302
+        expect(response).to redirect_to('@product')
+        expect(after).to eq (before + 1)
+      end
     end
-
-    it "should allow admin to delete product" do
-      product = FactoryGirl.create(:product)
-      delete :destroy, id: product.id
-      expect(response).to redirect_to products_path
-    end
-  end
-
-  context "put #update" do
-    before do
-      @product = FactoryGirl.create(:product)
-      @user = FactoryGirl.build(:user)
-      sign_in @user
-    end
-    it "successfully updates a product" do
-      @update = { name:@product.name, image_url:"images.com", id:@product.id, price:@product.price}
-      put :update, params: { id: @product.id, product: @update}
-      @product.reload
-      expect(@product.image_url).to eq "images.com"
+  
+    context 'when a new product is not created successfully' do
+      it 'the product is not saved in the database' do
+        before = Product.all.length
+        post :create, params: { product: {name: "Test Bike"}}
+        after = Product.all.length
+        expect(response.status).to eq 200
+        expect(response).to redirect_to('@product.errors')
+        expect(after).to eq before
+      end
     end
   end
 
+  ### PATCH update
+  describe 'PATCH #update' do
+    context 'when a product is updated' do
+      it 'saves the product to the database' do
+        before = Product.all.length
+        patch :update, params: { id: @product1.id, product: {name: "Homemade style"} }
+        after = Product.all.length
+        expect(response.status).to eq 302
+        expect(response).to redirect_to('@product')
+        expect(after).to eq before
+      end
+    end
+  end
+
+  ### DELETE destroy
+  describe 'DELETE #destroy' do
+    context 'when a product is deleted' do
+      it 'destroy the product' do
+        delete :destroy, params: {id: @product.id }
+        expect(response.status).to eq 302
+      end
+    end
+  end
+  end
 end

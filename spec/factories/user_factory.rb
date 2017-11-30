@@ -8,6 +8,10 @@ sequence(:email) { |n| "user#{n}@example.com" }
   	last_name "Guidi"
   	admin false
 
+  	factory :admin do
+  	admin true
+  end
+
   end
 
   
